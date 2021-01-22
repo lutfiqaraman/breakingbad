@@ -9,6 +9,10 @@ const dirname = path.resolve();
 app.set('views', dirname + '/views');
 app.set('view engine', 'pug');
 
+//Setup static directory to serve
+const pathOfPublicDirectory = path.join(dirname, '/public');
+app.use(express.static(pathOfPublicDirectory));
+
 // Render home page
 app.get('/', (req, res) => {
     res.render('index', {title: 'Home Page', message: 'Breakingbad App'});
@@ -16,6 +20,5 @@ app.get('/', (req, res) => {
 
 // Run a nodejs Server
 app.listen(3000, () => {
-    console.log(dirname);
     console.log('server is running');
 });

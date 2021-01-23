@@ -4,12 +4,12 @@ import pug from 'pug';
 
 const app = express();
 
-//Setup pugs engine and views location
+// Setup pugs engine and views location
 const dirname = path.resolve();
 app.set('views', dirname + '/views');
 app.set('view engine', 'pug');
 
-//Setup static directory to serve
+// Setup static directory to serve
 const pathOfPublicDirectory = path.join(dirname, '/public');
 app.use(express.static(pathOfPublicDirectory));
 
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.render('index', {title: 'Home Page', message: 'Breakingbad App'});
 });
 
-// Run a nodejs Server
+// Run a NodeJS Server
 app.listen(3000, () => {
     console.log('server is running');
 });

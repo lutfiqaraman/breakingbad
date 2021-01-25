@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-import pug from 'pug';
 
 const app = express();
 
@@ -15,7 +14,7 @@ app.use(express.static(pathOfPublicDirectory));
 
 // Render home page
 app.get('/', (req, res) => {
-    res.render('index', {title: 'Home Page', message: 'Breakingbad App'});
+    res.render('index', {title: 'Home Page', message: 'Breaking Bad App'});
 });
 
 // Run a NodeJS Server

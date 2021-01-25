@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import aboutRouter from '../routes/about.routes.js';
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(express.static(pathOfPublicDirectory));
 app.get('/', (req, res) => {
     res.render('index', {title: 'Home Page', message: 'Breaking Bad App'});
 });
+
+app.use('/about', aboutRouter);
 
 // Run a NodeJS Server
 app.listen(3000, () => {

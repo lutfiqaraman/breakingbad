@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
-import aboutRouter from '../routes/about.routes.js';
+import aboutRouter from '../routes/about.route.js';
+import homeRouter  from '../routes/home.route.js';
 
 const app = express();
 
@@ -13,11 +14,10 @@ app.set('view engine', 'pug');
 const pathOfPublicDirectory = path.join(dirname, '/public');
 app.use(express.static(pathOfPublicDirectory));
 
-// Render home page
-app.get('/', (req, res) => {
-    res.render('index', {title: 'Home Page', message: 'Breaking Bad App'});
-});
+// Render Home Page
+app.use('/', homeRouter);
 
+// Render About Page
 app.use('/about', aboutRouter);
 
 // Run a NodeJS Server

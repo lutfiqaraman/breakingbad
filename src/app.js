@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import aboutRouter from '../routes/about.route.js';
 import homeRouter  from '../routes/home.route.js';
+import helpRouter from '../routes/help.route.js';
 
 const app = express();
 
@@ -19,6 +20,9 @@ app.use('/', homeRouter);
 
 // Render About Page
 app.use('/about', aboutRouter);
+
+// Render Help Page
+app.use('/help', helpRouter);
 
 // Run a NodeJS Server
 app.listen(3000, () => {

@@ -9,8 +9,10 @@ const app = express();
 
 // Setup pugs engine and views location
 const dirname = path.resolve();
-app.set('views', dirname + '/views');
+
 app.set('view engine', 'pug');
+app.set('views', dirname + '/views');
+
 
 // Setup static directory to serve
 const pathOfPublicDirectory = path.join(dirname, '/public');

@@ -6,7 +6,7 @@ block content
 
     div.p-4
 
-        div.flex.items-center.rounded-full.shadow-xl.ml-32.mr-32.border-2.border-grey-300.border-opacity-25
+        div.flex.items-center.rounded-full.shadow-lg.ml-32.mr-32.border-2.border-grey-300.border-opacity-25
 
             input(class="rounded-full w-full py-4 px-6 text-grey-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search")
 
@@ -14,12 +14,18 @@ block content
                 button(class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-10 h-10 flex items-center justify-center")
                     i.fa.fa-search
 
-    div.p-4
-        div
-            p box one is here
+    div.auto-height.grid.grid-cols-3
+        div.box-border.h-32.w-64.p-4.shadow-lg.ml-32.mt-8.rounded-lg.border-2
+            h1 Box 1 Header is here
+            p.mt-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-        div
-            p box two is here
+        div.p-4.ml-32
+            div
+                i.fa.fa-phone.fa-lg
+            div
+                h1 Box 2 Header is here
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-        div
-            p box three is heres
+        div.p-4.ml-32
+            h1 Box 3 Header is here
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit.

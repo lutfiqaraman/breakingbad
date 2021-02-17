@@ -21,11 +21,17 @@ async function requestPromise(path) {
     });
 }
 
-(async function () {
+async function dataBreakingBad() {
     try {
-        const result = await requestPromise(baseURL);
-        console.log(result);
+        const data = await requestPromise(baseURL);
+        const result = JSON.parse(data.toString());
+
+        return result[0].name;
+
     } catch (error) {
         console.error(error);
     }
-})();
+}
+
+dataBreakingBad()
+    .then(r => console.log(r));

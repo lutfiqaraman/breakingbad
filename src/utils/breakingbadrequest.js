@@ -24,9 +24,7 @@ async function requestPromise(path) {
 async function dataBreakingBad() {
     try {
         const data = await requestPromise(baseURL);
-        const result = JSON.parse(data.toString());
-
-        return result[0].name;
+        return JSON.parse(data.toString());
 
     } catch (error) {
         console.error(error);
@@ -34,4 +32,5 @@ async function dataBreakingBad() {
 }
 
 dataBreakingBad()
-    .then(r => console.log(r));
+    .then(r => console.log(r))
+    .catch(() => console.log('error is happened'));

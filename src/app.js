@@ -4,6 +4,7 @@ import aboutRouter from '../routes/about.route.js';
 import homeRouter  from '../routes/home.route.js';
 import helpRouter from '../routes/help.route.js';
 import contactRouter from '../routes/contact.route.js';
+import characterRouter  from '../routes/character.route.js';
 
 const app = express();
 
@@ -29,6 +30,9 @@ app.use('/help', helpRouter);
 
 // Render Contact Page
 app.use('/contact', contactRouter);
+
+// Use Character Page
+app.use('/character', characterRouter);
 
 // Run a NodeJS Server
 app.listen(3000, () => {

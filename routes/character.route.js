@@ -12,8 +12,8 @@ characterRouter.get('/', (req, res) => {
             error: 'You must provide a name'
         });
     } else {
-
-        return data.BreakingBadData(character)
+        return data
+            .BreakingBadData(character)
             .then((dataOfCharacter) => {
                 console.log('Name: ' + dataOfCharacter[0].name);
                 console.log('Birth Date: ' + dataOfCharacter[0].birthday);

@@ -23,7 +23,7 @@ characterRouter.get('/', (req, res) => {
                 console.log(error);
             });
 
-        res.send({ data });
+        return res.send({ data: data });
     }
 });
 

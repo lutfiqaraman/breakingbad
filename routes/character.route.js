@@ -1,7 +1,10 @@
 import express from "express";
+import * as data from "../src/utils/breakingbadrequest.js";
+
 const characterRouter = express.Router();
 
 characterRouter.get('/', (req, res) => {
+
     const character = req.query.name;
 
     if (!character) {
@@ -9,9 +12,16 @@ characterRouter.get('/', (req, res) => {
             error: 'You must provide a name'
         });
     } else {
-        // HERE YOU HAVE TO CONNECT WITH THE FILE THAT FETCH THE DATA FROM
-        // BREAKING BAD API
-        console.log(character);
+
+        data.BreakingBadData(character)
+            .then((dataOfCharacter) => {
+                console.log('Name: ' + dataOfCharacter[0].name);
+                console.log('Birth Date: ' + dataOfCharacter[0].birthday);
+                console.log('Nickname: ' + dataOfCharacter[0].nickname);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 });
 

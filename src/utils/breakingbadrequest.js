@@ -1,7 +1,5 @@
 import * as https from 'https';
 
-const baseURL = 'https://www.breakingbadapi.com/api/characters?name=Walter';
-
 async function requestPromise(path) {
     return new Promise((resolve, reject) => {
         https.get(path, (resp) => {
@@ -21,8 +19,9 @@ async function requestPromise(path) {
     });
 }
 
-async function dataBreakingBad() {
+export async function BreakingBadData(characterName) {
     try {
+        const baseURL = 'https://www.breakingbadapi.com/api/characters?name=' + characterName;
         const data = await requestPromise(baseURL);
         return JSON.parse(data.toString());
 
@@ -30,7 +29,3 @@ async function dataBreakingBad() {
         console.error(error);
     }
 }
-
-dataBreakingBad()
-    .then(r => console.log(r))
-    .catch(() => console.log('error is happened'));

@@ -12,13 +12,13 @@ searchForm.addEventListener("submit", e => {
     fetch("/character?name=" + characterName)
         .then(response => {
             response
-                .json()
                 .then(result => {
                     if (result.error) {
                         msgOne.textContent = result.error;
                     } else {
-                        msgOne.textContent = characterName;  // result.characterName
-                        msgTwo.innerHTML = characterName     //result.characterData
+                        console.log('RESULT: ' + result);
+                        msgOne.textContent = '';
+                        msgTwo.textContent = result;
                     }
                 })
                 .catch(error => {

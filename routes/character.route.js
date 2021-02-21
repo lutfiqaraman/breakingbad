@@ -12,9 +12,11 @@ characterRouter.get('/', (req, res) => {
             error: 'You must provide a name'
         });
     } else {
-        const d =  data.BreakingBadData(character).then((r) => { return r });
-        console.log(d);
-        return res.send({ data: d });
+        data.BreakingBadData(character).then((result) => {
+            return res.send({
+                data: result
+            });
+        });
     }
 });
 

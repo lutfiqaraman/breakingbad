@@ -10,26 +10,11 @@ searchForm.addEventListener("submit", e => {
     msgOne.textContent = "Loading ...";
 
     fetch("/character?name=" + characterName)
-        .then(response => {
-            response
-                .then(result => {
-                    if (result.error) {
-                        msgOne.textContent = result.error;
-                    } else {
-                        console.log('RESULT: ' + result);
-                        msgOne.textContent = '';
-                        msgTwo.textContent = result;
-                    }
-                })
-                .catch(error => {
-                    if (error) {
-                        console.log(error);
-                    }
-                })
-            })
-        .catch(error => {
-            if (error)
-                console.log(error);
+        .then((r) => {
+            console.log(r);
+        })
+        .catch((e) => {
+            console.log(e);
         });
 })
 

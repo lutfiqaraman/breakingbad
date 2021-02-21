@@ -12,14 +12,16 @@ characterRouter.get('/', (req, res) => {
             error: 'You must provide a name'
         });
     } else {
-        data.BreakingBadData(character).then((result) => {
-            return res.send({
-                data: {
-                    name: result[0].name,
-                    birthday: result[0].birthday,
-                    nickname: result[0].nickname
-                }
-            });
+        data
+            .BreakingBadData(character)
+            .then((result) => {
+                return res.json({
+                    data: {
+                        name: result[0].name,
+                        birthday: result[0].birthday,
+                        nickname: result[0].nickname
+                    }
+                });
         });
     }
 });

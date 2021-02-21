@@ -14,7 +14,11 @@ characterRouter.get('/', (req, res) => {
     } else {
         data.BreakingBadData(character).then((result) => {
             return res.send({
-                data: result
+                data: {
+                    name: result[0].name,
+                    birthday: result[0].birthday,
+                    nickname: result[0].nickname
+                }
             });
         });
     }

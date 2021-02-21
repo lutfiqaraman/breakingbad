@@ -23,6 +23,7 @@ export async function BreakingBadData(characterName) {
     try {
         const baseURL = 'https://www.breakingbadapi.com/api/characters?name=' + characterName;
         const data = await requestPromise(baseURL);
+
         return JSON.parse(data.toString());
 
     } catch (error) {

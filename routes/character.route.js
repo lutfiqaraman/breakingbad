@@ -12,18 +12,9 @@ characterRouter.get('/', (req, res) => {
             error: 'You must provide a name'
         });
     } else {
-        data
-            .BreakingBadData(character)
-            .then((dataOfCharacter) => {
-                console.log('Name: ' + dataOfCharacter[0].name);
-                console.log('Birth Date: ' + dataOfCharacter[0].birthday);
-                console.log('Nickname: ' + dataOfCharacter[0].nickname);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-
-        return res.send({ data: data });
+        const d =  data.BreakingBadData(character).then((r) => { return r });
+        console.log(d);
+        return res.send({ data: d });
     }
 });
 

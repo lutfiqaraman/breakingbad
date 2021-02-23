@@ -10,11 +10,17 @@ searchForm.addEventListener("submit", e => {
     msgOne.textContent = "Loading ...";
 
     fetch("/character?name=" + characterName)
-        .then((r) => {
-            console.log(r);
+        .then((res) => {
+            res
+                .json()
+                .then((d) => {
+                    msgOne.textContent = '';
+                    msgTwo.innerHTML = d.data.birthday;
+                })
+                .catch(e => {console.log('Cannot render the data due to ' + e)});
         })
         .catch((e) => {
-            console.log(e);
+            console.log('Fetch API is not working due to ' + e);
         });
 })
 

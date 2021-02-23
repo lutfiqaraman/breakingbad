@@ -17,7 +17,9 @@ searchForm.addEventListener("submit", e => {
                     msgOne.textContent = '';
                     msgTwo.innerHTML = d.data.birthday;
                 })
-                .catch(e => {console.log('Cannot render the data due to ' + e)});
+                .catch(e => {
+                    console.log('Cannot render the data due to ' + e);
+                });
         })
         .catch((e) => {
             console.log('Fetch API is not working due to ' + e);

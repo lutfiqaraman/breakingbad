@@ -22,7 +22,7 @@ characterRouter.get('/', (req, res) => {
                         nickname: result[0].nickname
                     }
                 });
-        })
+            })
             .catch((e) => {
                 console.log(e);
             });

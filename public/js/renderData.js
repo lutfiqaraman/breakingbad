@@ -17,7 +17,10 @@ searchForm.addEventListener("submit", e => {
                 .json()
                 .then((d) => {
                     msgOne.textContent = '';
-                    msgTwo.innerHTML = d.data.birthday;
+                    msgTwo.innerHTML =
+                        'Name: ' + d.data.name + '<br/>' +
+                        'Birthday: ' + d.data.birthday + '<br/>' +
+                        'Nickname: ' + d.data.nickname;
                 })
                 .catch(e => {
                     console.log('Cannot render the data due to ' + e);

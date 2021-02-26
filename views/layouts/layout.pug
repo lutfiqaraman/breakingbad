@@ -10,8 +10,11 @@ html(lang="en")
         link(rel="stylesheet", href="/css/styles.css")
 
     body
-        include header.pug
+        div.flex.flex-col.h-screen.justify-between
 
-        block content
+            include header.pug
 
-        include footer.pug
+            main.mb-auto.h-80
+                block content
+
+            include footer.pug

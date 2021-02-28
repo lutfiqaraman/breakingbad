@@ -19,8 +19,10 @@ searchForm.addEventListener("submit", e => {
                     msgOne.textContent = '';
                     msgTwo.innerHTML =
                         'Name: ' + d.data.name + '<br/>' +
-                        'Birthday: ' + d.data.birthday + '<br/>' +
-                        'Nickname: ' + d.data.nickname;
+                        'Nickname: ' + d.data.nickname + '<br/>' +
+                        'Occupation: ' + d.data.occupation + '<br/>' +
+                        'Status: ' + d.data.status + '<br/>' +
+                        'List of seasons: ' + d.data.appearance + '<br/>';
                 })
                 .catch(e => {
                     console.log('Cannot render the data due to ' + e);

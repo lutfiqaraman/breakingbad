@@ -18,8 +18,10 @@ characterRouter.get('/', (req, res) => {
                 return res.json({
                     data: {
                         name: result[0].name,
-                        birthday: result[0].birthday,
-                        nickname: result[0].nickname
+                        occupation: result[0].occupation,
+                        appearance: result[0].appearance,
+                        nickname: result[0].nickname,
+                        status: result[0].status
                     }
                 });
             })

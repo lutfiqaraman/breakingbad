@@ -9,7 +9,7 @@ characterRouter.get('/', (req, res) => {
 
     if (!character) {
         return res.send({
-            error: 'You must provide a name'
+            error: 'Please, you have to type a name'
         });
     } else {
         data
